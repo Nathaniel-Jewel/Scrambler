@@ -1,0 +1,50 @@
+Name: Nathaniel Jewel
+
+Project: scramble.js
+
+Description:
+
+	Scores the difficulty of any particular scrambling of a word. The scores can be not,
+	poor, fair or hard, depending on whether or not the scramble is not scrambled, easy to solve, a reasonable difficulty to solve or hard to solve, respectively.
+
+Requirements:
+
+	You will need Node.js and npm installed.
+
+Running the Project:
+
+	Example:
+
+	node scramble.js '["MAPS SPAM", "RIONY IRONY", "ONYRI IRONY", "IRONY IRONY", "INOYR IRONY", "IOYRN IRONY"]'
+
+	or 
+
+	node scramble.js -file test.txt
+
+	where text.txt contains a comma seperated list with only a single space between the scramble and word.
+	However having any number of spaces or newline breaks before/after each element is fine.
+
+		Example of test.txt:
+
+		MAPS SPAM, RIONY IRONY, ONYRI IRONY, IRONY IRONY, INOYR IRONY, IOYRN IRONY
+
+		is handled the same as:
+
+		  MAPS  SPAM,
+		RIONY IRONY, 
+		ONYRI IRONY, 
+		IRONY IRONY, INOYR IRONY, IOYRN IRONY, 
+		CHAI ACIH
+
+
+Additonal Commenents:
+
+	Normally if i was writitng a node.js project that needed command line arguements i would install a package like minimist or yargs. However packages seemed unessesary for this project so i avoided them.
+
+	If the scramble or the word are not A-Z letters i print an input error message to console for that element and try to process the other elemenents. 
+
+	If the scramble and the word are A-Z letters, but are different words then the element gets assigned a 'Not' difficulty.
+
+	In the PDF, SWR was giving as being invalid, because combinations can't overlap. I also interperated SWCH as invalid even though SW is valid and CH is valid, because WC is breaking the alternating rule.
+
+	
